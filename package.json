@@ -1,0 +1,22 @@
+{
+  "name": "startingwithtypescript",
+  "version": "1.0.0",
+  "description": "\"Learning TSC\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MirzaLeka/startingWithTypescript.git"
+  },
+  "author": "\"Mirza Leka\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MirzaLeka/startingWithTypescript/issues"
+  },
+  "homepage": "https://github.com/MirzaLeka/startingWithTypescript#readme",
+  "dependencies": {
+    "typescript": "^2.9.2"
+  }
+}

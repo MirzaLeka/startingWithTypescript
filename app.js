@@ -15,26 +15,6 @@ var myLastName = "Leka";
 whatever = "23";
 // run auto-compiler: tsc *.ts --watch --target ES5
 // quickly compile: tsc app.ts
-// OBJECT
-var student = {
-    Name: "Mirza",
-    Age: 24,
-    Phone: 123321
-};
-// ARRAY
-var studentsList = [
-    {
-        Name: "Ermin",
-        Age: 23,
-        Phone: 471961
-    }
-];
-studentsList.push(student);
-// FOR LOOP
-for (var i = 0; i < studentsList.length; i++) {
-    var element = studentsList[i];
-    console.log("\n  Age: " + element.Age + "\n  Name: " + element.Name + "\n  ");
-}
 // ENUMS
 var languageKnown;
 (function (languageKnown) {
@@ -44,3 +24,48 @@ var languageKnown;
     languageKnown[languageKnown["Pascal"] = 3] = "Pascal";
 })(languageKnown || (languageKnown = {}));
 ;
+// OBJECT
+var student1 = {
+    Name: "Mirza",
+    Age: 24,
+    Phone: 123321,
+    Language: languageKnown[languageKnown.JS]
+};
+// ARRAY
+var listOfStudents = [
+    {
+        Name: "Ermin",
+        Age: 23,
+        Phone: 471961,
+        Language: languageKnown[languageKnown.CSharp]
+    }
+];
+listOfStudents.push(student1);
+// FOR LOOP
+/*
+for (var i = 0; i < listOfStudents.length; i++) {
+  var element = listOfStudents[i];
+  console.log(`
+  Age: ${element.Age}
+  Name: ${element.Name}
+  Languages Known: ${element.Language}
+  `);
+}
+*/
+// FUNCTIONS
+function getStudentList(students) {
+    students.forEach(function (element) {
+        console.log("\n    Age: " + element.Age + "\n    Name: " + element.Name + "\n    Languages Known: " + element.Language + "\n    ");
+    });
+}
+getStudentList(listOfStudents);
+// This is a function with standard parameter
+// We can have a function with default parameter function funky () and nums 
+// Anonymous function
+var StudentName = function (lName, fName) {
+    return fName + "...." + lName;
+};
+console.log(StudentName("Sam", "Fisher"));
+//Arrow function
+var StudentFullName = function (lName, fName) { return fName + "..." + lName; };
+console.log(StudentFullName("Solid", "Snake"));

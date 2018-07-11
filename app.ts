@@ -22,39 +22,74 @@ whatever = "23";
 
 // quickly compile: tsc app.ts
 
-// OBJECT
-
-let student = {
-  Name: "Mirza",
-  Age: 24,
-  Phone: 123321
-}
-
-// ARRAY
-
-let studentsList = [
-  {
-    Name: "Ermin",
-    Age: 23,
-    Phone: 471961
-  }
-];
-
-studentsList.push(student);
-
-// FOR LOOP
-
-for (var i = 0; i < studentsList.length; i++) {
-  var element = studentsList[i];
-  console.log(`
-  Age: ${element.Age}
-  Name: ${element.Name}
-  `);
-}
-
-
 // ENUMS
 
 enum languageKnown  {
   JS, Java, CSharp, Pascal
 };
+
+
+// OBJECT
+
+let student1 = {
+  Name: "Mirza",
+  Age: 24,
+  Phone: 123321,
+  Language: languageKnown[languageKnown.JS]
+}
+
+// ARRAY
+
+let listOfStudents = [
+  {
+    Name: "Ermin",
+    Age: 23,
+    Phone: 471961,
+    Language: languageKnown[languageKnown.CSharp]
+  }
+];
+
+listOfStudents.push(student1);
+
+// FOR LOOP
+
+/*
+for (var i = 0; i < listOfStudents.length; i++) {
+  var element = listOfStudents[i];
+  console.log(`
+  Age: ${element.Age}
+  Name: ${element.Name}
+  Languages Known: ${element.Language}
+  `);
+}
+*/
+
+// FUNCTIONS
+
+function getStudentList(students: any[]) {
+  students.forEach(element => {
+    console.log(`
+    Age: ${element.Age}
+    Name: ${element.Name}
+    Languages Known: ${element.Language}
+    `);
+  });
+}
+getStudentList(listOfStudents);
+
+// This is a function with standard parameter
+// We can have a function with default parameter function funky () and nums 
+
+// Anonymous function
+let StudentName = function (lName: string, fName: string) {
+  return fName + "...." + lName;
+  }
+  
+  console.log(StudentName("Sam", "Fisher"));
+  
+  //Arrow function
+  let StudentFullName = (lName: string, fName: string) => fName + "..." + lName;
+  
+  console.log(StudentFullName("Solid", "Snake"));
+  
+  
